@@ -62,28 +62,7 @@ class Player:
                 return chosen_action, chosen_target
         print(f"{self.name} (AI) chooses to {chosen_action}")
         return chosen_action
-    
-
-    # def ai_choose_action(self, game, actions):
-    #     """AI randomly chooses an action and a target (if necessary)."""
-    #     while True:
-    #         chosen_action = random.choice(actions)
-
-    #         # Check if the AI has enough coins for actions like 'coup' or 'assassinate'
-    #         if chosen_action == 'coup' and self.coins < 7:
-    #             continue  # Skip the action and choose again
-    #         elif chosen_action == 'assassinate' and self.coins < 3:
-    #             continue  # Skip the action and choose again
-
-    #         if chosen_action in ['coup', 'assassinate', 'steal']:
-    #             targets = self.get_available_targets(game)
-    #             if targets:
-    #                 chosen_target = random.choice(targets)
-    #                 print(f"{self.name} (AI) chooses to {chosen_action} targeting {chosen_target.name}")
-    #                 return chosen_action, chosen_target
-    #         print(f"{self.name} (AI) chooses to {chosen_action}")
-    #         return chosen_action
-
+        
     def get_available_targets(self, game):
         """Returns a list of players that can be targeted for certain actions."""
         return [player for player in game.players if player != self and player.has_cards()]
